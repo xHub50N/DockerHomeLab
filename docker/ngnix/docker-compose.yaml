@@ -1,0 +1,26 @@
+version: '2'
+services:
+ app:
+   image: 'jc21/nginx-proxy-manager:latest'
+   restart: always
+   ports:
+    - '80:80'
+    - '443:443'
+    - '81:81'
+   volumes:
+    - './config.json:/app/config/production.json'
+    - './data:/data'
+    - './letsencrypt:/etc/letsencrypt'
+   depends_on:
+    - db
+
+ db:
+  image: 'jc21/mariadb-aria:latest'
+  restart: always
+  environment:
+   MYSQL_ROOT_PASSWORD: 'Zaq12wsx'
+   MYSQL_DATABASE: 'npm'
+   MYSQL_USER: 'npm'
+   MYSQL_PASSWORD: 'Zaq12wsx'
+  volumes:
+   - './data/mysql:/var/lib/mysql'
