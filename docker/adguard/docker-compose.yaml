@@ -1,0 +1,21 @@
+####
+# It's required to release 53 port
+# $ sudo systemctl stop systemd-resolved
+# $ sudo systemctl disable systemd-resolved.service
+# $ sudo reboot
+####
+
+version: "2"
+services:
+   adguardhome:
+     image: adguard/adguardhome:latest
+     container_name: adguardhome
+     restart: always
+     ports:
+       - 53:53/tcp
+       - 53:53/udp
+       - 853:853/tcp
+       - 3000:3000/tcp
+     volumes:
+       - /your/own/dir/work:/opt/adguardhome/work
+       - /your/own/dir/conf:/opt/adguardhome/conf
