@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Docker Home Lab</title>
-    <script type="text/javascript">
-        window.onload = function() {
-            window.location.href = "Hubert_Bojda_Docker_Home_Lab.pdf";
-        };
-    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
+    <h1>Open PDF file</h1>
+    <button onclick="window.open('Hubert_Bojda_Docker_Home_Lab_PL.pdf', '_blank')">Polska wersja</button>
+    <button onclick="window.open('Hubert_Bojda_Docker_Home_Lab_ENG.pdf', '_blank')">English version</button>
 </body>
 </html>
